@@ -5,9 +5,8 @@ export default defineConfig({
     build: {
         sourcemap: true,
         lib: {
-            entry: "src/index.ts",
+            entry: "src/sanctus.ts",
             name: "Sanctus",
-            fileName: "db",
         },
         rollupOptions: {
             output: [
