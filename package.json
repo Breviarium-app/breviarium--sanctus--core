@@ -13,7 +13,7 @@
     "liturgical",
     "marthyr"
   ],
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/sanctus.cjs.js",
   "module": "dist/sanctus.esm.js",
   "types": "dist/sanctus.d.ts",
