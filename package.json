@@ -41,8 +41,8 @@
   "types": "./dist/sanctus.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/sanctus.js",
-      "types": "./dist/sanctus.d.ts"
+      "types": "./dist/sanctus.d.ts",
+      "import": "./dist/sanctus.es.js"
     }
   },
   "license": "MIT"
