@@ -13,12 +13,14 @@
     "liturgical",
     "marthyr"
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc && vite build",
     "test": "vitest",
