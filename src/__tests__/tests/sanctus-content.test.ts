@@ -39,4 +39,11 @@ describe("Sanctus module content verify", () => {
         expect(item?.name).to.equal("San Joaquín y santa Ana, padres de la bienaventurada Virgen María");
     });
 
+    it("should return list for getAllSaints", () => {
+        const sanctus = new Sanctus(new Date(2025, 7, 26));
+        const list: SaintInfo[] = sanctus.getAllSaints();
+
+        expect(list.length).greaterThan(10);
+    });
+
 });
