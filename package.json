@@ -14,9 +14,6 @@
     "marthyr"
   ],
   "version": "0.0.6",
-  "main": "dist/sanctus.cjs.js",
-  "module": "dist/sanctus.esm.js",
-  "types": "dist/sanctus.d.ts",
   "type": "module",
   "files": [
     "dist"
@@ -38,6 +35,15 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  },
+  "main": "./dist/sanctus.js",
+  "module": "./dist/sanctus.js",
+  "types": "./dist/sanctus.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/sanctus.js",
+      "types": "./dist/sanctus.d.ts"
+    }
   },
   "license": "MIT"
 }
