@@ -21,13 +21,18 @@ export class Sanctus implements SanctusInterface {
         return list.at(0);
     }
 
+    /**
+     * Month from 0-11
+     * @param month
+     * @param day
+     */
     getSaintFromMonthDay(month: number, day: number): SaintInfo | undefined {
-        return this.getSaintsFromMonthAndDay(month, day).at(0);
+        return this.getSaintsFromDB(month, day).at(0);
     }
 
     getSaintsOfDay(date?: Date): SaintInfo[] {
         const {day, month} = this.getMonthAndDayFromDate(date);
-        return this.getSaintsFromMonthAndDay(month, day);
+        return this.getSaintsFromDB(month, day);
     };
 
 
@@ -52,13 +57,13 @@ export class Sanctus implements SanctusInterface {
 
     /**
      *
-     * Get saints of a day, shortened by category
+     * Get saints from db of a day, shortened by category
      *
      * @param month
      * @param day
      * @private
      */
-    private getSaintsFromMonthAndDay(month: number, day: number): SaintInfo[] {
+    private getSaintsFromDB(month: number, day: number): SaintInfo[] {
         console.log("search for month: ", month, "day: ", day);
         return all_saints.filter(
             (s) => s.month === month + 1 && s.day === day

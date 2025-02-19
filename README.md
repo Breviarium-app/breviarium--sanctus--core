@@ -34,11 +34,11 @@ const sanctus = new Sanctus();
 
 // Get a single saint for February 17, 2025
 const saint: SaintInfo | undefined = sanctus.getSaint(new Date(2025, 1, 17));
-console.log(saint?.name); // "San Antonio Abad"
+console.log(saint?.name); // "San Teodoro de Bizancio"
 
 ```
 ```ts
-// Get a saint using month and day
+// Get a saint using month (0-11) and day 
 const saintByDate: SaintInfo | undefined = sanctus.getSaintFromMonthDay(2, 17);
 console.log(saintByDate?.name); // "San Teodoro de Bizancio"
 ```

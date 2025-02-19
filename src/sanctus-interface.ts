@@ -1,6 +1,6 @@
 export interface SanctusInterface {
     getSaint: (date?: Date) => SaintInfo | undefined;
-    getSaintFromMonthDay: (month: number, day: number) => SaintInfo | undefined;
+    getSaintFromMonthDay: (month: number, day: number) => SaintInfo | undefined; // month 0-11
     getSaintsOfDay: (date?: Date) => SaintInfo[];
     getAllSaints: () => SaintInfo[];
     getCurrentDate: () => Date;
