@@ -1,9 +1,15 @@
 name: Build and publish NPM Package 🚀
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Major or Minor version bump'
+        required: true
+        type: choice
+        options:
+          - major
+          - minor
 
 permissions:
   contents: write
@@ -25,15 +31,24 @@ jobs:
       - name: Install dependencies 🔨
         run: npm ci
 
-      - name: Update patch version
-        run: npm version patch --no-git-tag-version
+      - name: Determine version bump type
+        id: version_bump
+        run: |
+          if [[ "${{ github.event.inputs.version_type }}" == "major" ]]; then
+            echo "version_bump=major" >> $GITHUB_OUTPUT
+          else
+            echo "version_bump=minor" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update version
+        run: npm version ${{ steps.version_bump.outputs.version_bump }} --no-git-tag-version
 
       - name: Commit version bump ⚙️
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add package.json package-lock.json
-          git commit -m "chore: bump patch version"
+          git commit -m "chore: bump ${{ steps.version_bump.outputs.version_bump }} version"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
