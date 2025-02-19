@@ -20,7 +20,42 @@
 
 ## Quickstart setup
 
-> TODO
+Install module:
+```shell
+npm i sanctus
+```
+
+## Sample uses
+```ts
+
+import {SaintInfo, Sanctus} from "sanctus";
+
+const sanctus = new Sanctus();
+
+// Get a single saint for February 17, 2025
+const saint: SaintInfo | undefined = sanctus.getSaint(new Date(2025, 1, 17));
+console.log(saint?.name); // "San Antonio Abad"
+
+```
+```ts
+// Get a saint using month and day
+const saintByDate: SaintInfo | undefined = sanctus.getSaintFromMonthDay(2, 17);
+console.log(saintByDate?.name); // "San Teodoro de Bizancio"
+```
+
+```ts
+// Get all saints of the current day
+const sanctus = new Sanctus();
+const saintsOfDay: SaintInfo[] = sanctus.getSaintsOfDay();
+console.log(saintsOfDay);
+```
+
+```ts
+// Set a new date
+sanctus.setDate(new Date(2025, 5, 1));
+const saintsFromNewDate: SaintInfo[] = sanctus.getSaintsOfDay();
+console.log(saintsFromNewDate);
+```
 
 ## Test
 
@@ -54,14 +89,14 @@ export interface SanctusInterface {
 
 ## Function Documentation
 
-| Method                  | Description                                             | Parameters             | Return Type  | Example Call |
-|-------------------------|---------------------------------------------------------|------------------------|--------------|--------------|
-| `getSaint`             | Retrieves a single saint for the given date.            | `date?: Date`          | `SaintInfo \| undefined` | `sanctus.getSaint(new Date(2025, 1, 17));` |
-| `getSaintFromMonthDay` | Retrieves a single saint for a specific month and day.  | `month: number, day: number` | `SaintInfo \| undefined` | `sanctus.getSaintFromMonthDay(2, 17);` |
-| `getSaintsOfDay`       | Retrieves all saints for the given date.                | `date?: Date`          | `SaintInfo[]` | `sanctus.getSaintsOfDay();` |
-| `getAllSaints`         | Returns an array of all saints in the database.         | `None`                 | `SaintInfo[]` | `sanctus.getAllSaints();` |
-| `getCurrentDate`       | Returns the currently set date in the instance.         | `None`                 | `Date`        | `sanctus.getCurrentDate();` |
-| `setDate`              | Sets a new date to be used for saint retrieval.         | `date: Date`           | `void`        | `sanctus.setDate(new Date(2025, 5, 1));` |
+| Method                  | Description                                    | Parameters             | Return Type  | Example Call |
+|-------------------------|------------------------------------------------|------------------------|--------------|--------------|
+| `getSaint`             | single saint info for the given date.          | `date?: Date`          | `SaintInfo \| undefined` | `sanctus.getSaint(new Date(2025, 1, 17));` |
+| `getSaintFromMonthDay` | single saint for month and day.                | `month: number, day: number` | `SaintInfo \| undefined` | `sanctus.getSaintFromMonthDay(2, 17);` |
+| `getSaintsOfDay`       | all saints for the given date.                 | `date?: Date`          | `SaintInfo[]` | `sanctus.getSaintsOfDay();` |
+| `getAllSaints`         | all saints in the database.                    | `None`                 | `SaintInfo[]` | `sanctus.getAllSaints();` |
+| `getCurrentDate`       | currently set date in the instance.            | `None`                 | `Date`        | `sanctus.getCurrentDate();` |
+| `setDate`              | Sets a new date                                | `date: Date`           | `void`        | `sanctus.setDate(new Date(2025, 5, 1));` |
 
 ---
 
@@ -97,30 +132,3 @@ export type SaintInfo = {
 
 ---
 
-## **Usage Example**
-
-```ts
-import { SanctusInterface, SaintInfo, Sanctus } from "./sanctus";
-
-const sanctus: SanctusInterface = new Sanctus();
-
-// Get a single saint for February 17, 2025
-const saint: SaintInfo | undefined = sanctus.getSaint(new Date(2025, 1, 17));
-console.log(saint?.name);
-
-// Get a saint using month and day
-const saintByDate: SaintInfo | undefined = sanctus.getSaintFromMonthDay(2, 17);
-console.log(saintByDate?.name);
-```
-
-```ts
-// Get all saints of the current day
-const sanctus: SanctusInterface = new Sanctus();
-const saintsOfDay: SaintInfo[] = sanctus.getSaintsOfDay();
-console.log(saintsOfDay);
-
-// Set a new date
-sanctus.setDate(new Date(2025, 5, 1));
-const saintsNewDate: SaintInfo[] = sanctus.getSaintsOfDay();
-console.log(saintsNewDate);
-```
