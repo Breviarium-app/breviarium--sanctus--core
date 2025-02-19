@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsc && vite build",
-    "test": "vitest",
+    "test": "vitest run",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage"
   },
