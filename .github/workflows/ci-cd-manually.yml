@@ -1,4 +1,4 @@
-name: Build and publish NPM Package 🚀
+name: Build minor/major and publish NPM Package 🚀
 
 on:
   workflow_dispatch:
