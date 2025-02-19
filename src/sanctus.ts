@@ -2,6 +2,9 @@
 import {SaintInfo, SanctusInterface} from "./sanctus-interface.ts";
 import all_saints from './db/all_saints.json'
 
+export type {SaintInfo}
+export type {SanctusInterface}
+
 export class Sanctus implements SanctusInterface {
 
     #selectedDate: Date;
