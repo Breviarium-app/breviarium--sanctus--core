@@ -10,27 +10,6 @@ export default defineConfig({
             fileName: (format) => `sanctus.${format}.js`,
             formats: ["es", "cjs", "umd"]
         },
-        // rollupOptions: {
-        //     output: [
-        //         {
-        //             format: "es",
-        //             entryFileNames: "index.esm.js",
-        //             dir: "dist",
-        //         },
-        //         {
-        //             format: "cjs",
-        //             entryFileNames: "index.cjs.js",
-        //             dir: "dist",
-        //         },
-        //         {
-        //             format: "umd",
-        //             entryFileNames: "index.umd.js",
-        //             dir: "dist",
-        //             name: "Sanctus", // Global variable for browsers
-        //             sourcemap: true,
-        //         },
-        //     ],
-        // },
     },
     plugins: [dts()],
 });
