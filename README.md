@@ -11,21 +11,30 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE">
-    <img alt="License" src="https://img.shields.io/badge/license-MIT-blue?color=blue&style=flat"></a>
-  <a href="https://www.npmjs.com/package/sanctus/v/latest" target="_blank" rel="noopener noreferrer">
-<img alt="latest" src="https://img.shields.io/npm/v/sanctus/latest?style=flat&logo=npm&color=35d401"></a>
-
+    <a href="LICENSE">
+        <img alt="License" src="https://img.shields.io/badge/license-MIT-blue?color=blue&style=flat">
+    </a>
+    <a href="https://www.npmjs.com/package/sanctus/v/latest" target="_blank" rel="noopener noreferrer">
+        <img alt="latest" src="https://img.shields.io/npm/v/sanctus/latest?style=flat&logo=npm&color=35d401">
+    </a>
+    <a href="https://www.npmjs.com/package/sanctus/v/latest" target="_blank" rel="noopener noreferrer">
+        <img alt="latest" src="https://img.shields.io/npm/dm/sanctus?label=downloads&logo=npm">
+    </a>
+    <a href="https://www.jsdelivr.com/package/npm/sanctus" target="_blank" rel="noopener noreferrer">
+        <img alt="latest" src="https://data.jsdelivr.com/v1/package/npm/sanctus/badge?style=rounded">
+    </a>
 </p>
 
 ## Quickstart setup
 
 Install module:
+
 ```shell
 npm i sanctus
 ```
 
 ## Sample uses
+
 ```ts
 
 import {SaintInfo, Sanctus} from "sanctus";
@@ -37,6 +46,7 @@ const saint: SaintInfo | undefined = sanctus.getSaint(new Date(2025, 1, 17));
 console.log(saint?.name); // "San Teodoro de Bizancio"
 
 ```
+
 ```ts
 // Get a saint using month (0-11) and day 
 const saintByDate: SaintInfo | undefined = sanctus.getSaintFromMonthDay(2, 17);
@@ -89,14 +99,14 @@ export interface SanctusInterface {
 
 ## Function Documentation
 
-| Method                  | Description                                    | Parameters             | Return Type  | Example Call |
-|-------------------------|------------------------------------------------|------------------------|--------------|--------------|
-| `getSaint`             | single saint info for the given date.          | `date?: Date`          | `SaintInfo \| undefined` | `sanctus.getSaint(new Date(2025, 1, 17));` |
-| `getSaintFromMonthDay` | single saint for month and day.                | `month: number, day: number` | `SaintInfo \| undefined` | `sanctus.getSaintFromMonthDay(2, 17);` |
-| `getSaintsOfDay`       | all saints for the given date.                 | `date?: Date`          | `SaintInfo[]` | `sanctus.getSaintsOfDay();` |
-| `getAllSaints`         | all saints in the database.                    | `None`                 | `SaintInfo[]` | `sanctus.getAllSaints();` |
-| `getCurrentDate`       | currently set date in the instance.            | `None`                 | `Date`        | `sanctus.getCurrentDate();` |
-| `setDate`              | Sets a new date                                | `date: Date`           | `void`        | `sanctus.setDate(new Date(2025, 5, 1));` |
+| Method                 | Description                           | Parameters                   | Return Type              | Example Call                               |
+|------------------------|---------------------------------------|------------------------------|--------------------------|--------------------------------------------|
+| `getSaint`             | single saint info for the given date. | `date?: Date`                | `SaintInfo \| undefined` | `sanctus.getSaint(new Date(2025, 1, 17));` |
+| `getSaintFromMonthDay` | single saint for month and day.       | `month: number, day: number` | `SaintInfo \| undefined` | `sanctus.getSaintFromMonthDay(2, 17);`     |
+| `getSaintsOfDay`       | all saints for the given date.        | `date?: Date`                | `SaintInfo[]`            | `sanctus.getSaintsOfDay();`                |
+| `getAllSaints`         | all saints in the database.           | `None`                       | `SaintInfo[]`            | `sanctus.getAllSaints();`                  |
+| `getCurrentDate`       | currently set date in the instance.   | `None`                       | `Date`                   | `sanctus.getCurrentDate();`                |
+| `setDate`              | Sets a new date                       | `date: Date`                 | `void`                   | `sanctus.setDate(new Date(2025, 5, 1));`   |
 
 ---
 
@@ -119,16 +129,16 @@ export type SaintInfo = {
 ### SaintInfo Properties
 
 | Property           | Type     | Required | Description                                      |
-|--------------------|---------|----------|--------------------------------------------------|
-| `month`           | `number` | ✅ Yes   | Month of the saint's feast day (1-12).           |
-| `day`             | `number` | ✅ Yes   | Day of the saint's feast day (1-31).             |
-| `category`        | `number` | ✅ Yes   | Category or rank of the saint: principal or not. |
-| `name`            | `string` | ✅ Yes   | Name of the saint.                               |
-| `birth`           | `string` | ❌ No    | Birth year or approximate time.                  |
-| `dead`            | `string` | ❌ No    | Death year or approximate time.                  |
-| `meaning`         | `string` | ❌ No    | Meaning or significance of the saint's name.     |
-| `shortDescription` | `string` | ❌ No    | Brief summary of the saint.                      |
-| `description`     | `string` | ❌ No    | Detailed description of the saint's life.        |
+|--------------------|----------|----------|--------------------------------------------------|
+| `month`            | `number` | ✅ Yes    | Month of the saint's feast day (1-12).           |
+| `day`              | `number` | ✅ Yes    | Day of the saint's feast day (1-31).             |
+| `category`         | `number` | ✅ Yes    | Category or rank of the saint: principal or not. |
+| `name`             | `string` | ✅ Yes    | Name of the saint.                               |
+| `birth`            | `string` | ❌ No     | Birth year or approximate time.                  |
+| `dead`             | `string` | ❌ No     | Death year or approximate time.                  |
+| `meaning`          | `string` | ❌ No     | Meaning or significance of the saint's name.     |
+| `shortDescription` | `string` | ❌ No     | Brief summary of the saint.                      |
+| `description`      | `string` | ❌ No     | Detailed description of the saint's life.        |
 
 ---
 
