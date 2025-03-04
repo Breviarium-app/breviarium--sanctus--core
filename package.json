@@ -36,7 +36,7 @@
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.9.5"
   },
-  "main": "./dist/sanctus.cjs.js",
+  "main": "./dist/sanctus.cjs.cjs",
   "module": "./dist/sanctus.es.js",
   "types": "./dist/sanctus.d.ts",
   "exports": {
