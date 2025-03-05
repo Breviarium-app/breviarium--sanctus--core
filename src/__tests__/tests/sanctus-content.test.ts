@@ -49,7 +49,7 @@ describe("Sanctus module content verify", () => {
     it("should return saint for today by default", () => {
         const sanctus = new Sanctus();
         const item: SaintInfo | undefined = sanctus.getSaint();
-        console.log(item)
+
         expect(item).not.toBeNull();
     });
 

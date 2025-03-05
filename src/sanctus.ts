@@ -64,7 +64,6 @@ export class Sanctus implements SanctusInterface {
      * @private
      */
     private getSaintsFromDB(month: number, day: number): SaintInfo[] {
-        console.log("search for month: ", month, "day: ", day);
         return all_saints.filter(
             (s) => s.month === month + 1 && s.day === day
         ).sort((a, b) => a.category - b.category);
