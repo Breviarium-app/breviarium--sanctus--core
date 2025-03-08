@@ -23,6 +23,9 @@
     <a href="https://www.jsdelivr.com/package/npm/sanctus" target="_blank" rel="noopener noreferrer">
         <img alt="latest" src="https://data.jsdelivr.com/v1/package/npm/sanctus/badge?style=rounded">
     </a>
+    <a href="https://bundlephobia.com/result?p=sanctus" target="_blank" rel="noopener noreferrer">
+        <img alt="minzipped" src="https://badgen.net/bundlephobia/minzip/sanctus">
+    </a>
 </p>
 
 ## Quickstart setup
