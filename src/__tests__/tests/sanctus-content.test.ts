@@ -31,6 +31,12 @@ describe("Sanctus module content verify", () => {
 
         expect(item?.name).to.equal("Santos Arcángeles Miguel, Gabriel y Rafael"); // src: https://liturgiapapal.org/attachments/article/1093/PROPIO%20DE%20LOS%20SANTOS.pdf#page=9
     });
+    it("should return content for 17/03", () => {
+        const sanctus = new Sanctus(new Date(2025, 2, 17));
+        const item: SaintInfo | undefined = sanctus.getSaint();
+
+        expect(item?.name).to.equal("San Patricio");
+    });
 
     it("should return content for 07/26", () => {
         const sanctus = new Sanctus(new Date(2025, 6, 26));
