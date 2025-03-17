@@ -5,7 +5,7 @@ import all_saints from './db/all_saints.json'
 export type {SaintInfo}
 export type {SanctusInterface}
 
-export class Sanctus implements SanctusInterface {
+export default class Sanctus implements SanctusInterface {
 
     #selectedDate: Date;
 
@@ -68,6 +68,5 @@ export class Sanctus implements SanctusInterface {
             (s) => s.month === month + 1 && s.day === day
         ).sort((a, b) => a.category - b.category);
     }
-
 
 }

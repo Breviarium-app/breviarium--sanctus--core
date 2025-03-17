@@ -1,5 +1,5 @@
 import {describe, expect, it} from "vitest";
-import {Sanctus} from "../../sanctus.ts";
+import Sanctus from "../../sanctus.ts";
 import {SaintInfo} from "../../sanctus-interface.ts";
 
 const locale = "en-CA"; // Use a consistent locale (YYYY-MM-DD format)
